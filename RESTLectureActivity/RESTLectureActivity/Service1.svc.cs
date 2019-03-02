@@ -16,7 +16,7 @@ namespace RESTLectureActivity
         {
             //password = first 2 letters of LASTname + last 2 letters of FIRSTname + age%5
             string password = String.Empty;
-            password = lastName[lastName.Length - 2].ToString() + lastName[lastName.Length - 1].ToString() + firstName[0].ToString() + firstName[1].ToString() + (age % 5).ToString();
+            password = lastName.Substring(0, 2) + firstName.Substring(firstName.Length - 2) + (age % 5).ToString();
             return password;
         }
 

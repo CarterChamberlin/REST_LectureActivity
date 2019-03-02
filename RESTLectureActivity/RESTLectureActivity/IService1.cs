@@ -13,7 +13,7 @@ namespace RESTLectureActivity
     public interface IService1
     {
         [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "password?firstName={firstName}&lastName={lastName}&age={age}")] //"/password/{firstName, lastName, age}"
+        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "/password?firstName={firstName}&lastName={lastName}&age={age}")]
 
         string password(string firstName, string lastName, int age);
 

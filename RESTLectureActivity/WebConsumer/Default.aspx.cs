@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.IO;
-using System.Xml;
-//using System.Net.Http;
-//using System.Runtime.Serialization.Json;
 
 namespace WebConsumer
 {
@@ -22,11 +13,6 @@ namespace WebConsumer
             PASSWORD.ReadOnly = true;
         }
 
-
-
-
-
-
         protected void SUBMIT_Click(object sender, EventArgs e)
         {
             string firstName = String.Empty;
@@ -36,9 +22,33 @@ namespace WebConsumer
             string password = String.Empty;
             int loginID = 0;
 
+
             firstName = FIRST.Text;
             lastName = LAST.Text;
             age = Int32.Parse(AGE.Text);
+
+            string urlPW = @"http://localhost:54497/Service1.svc/password?firstName=" + firstName + "&lastName=" + lastName + "&age=" + age;
+            password = readerResponse(urlPW);
+            password = password.Remove(password.Length - 1, 1);
+            password = password.Remove(0, 1);
+            PASSWORD.Text = password;
+
+            string urlID = @"http://localhost:54497/Service1.svc/loginID?age=" + age;
+            loginID = Int32.Parse(readerResponse(urlID));
+            LOGINID.Text = loginID.ToString();
+            
+            //password = lastName.Substring(0, 2) + firstName.Substring(firstName.Length - 2) + (age % 5).ToString();
+           // PASSWORD.Text = password;
+        }
+
+        string readerResponse(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(responseStream);
+
+            return reader.ReadToEnd();
         }
     }
 }
