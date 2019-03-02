@@ -37,8 +37,7 @@ namespace WebConsumer
             loginID = Int32.Parse(readerResponse(urlID));
             LOGINID.Text = loginID.ToString();
             
-            //password = lastName.Substring(0, 2) + firstName.Substring(firstName.Length - 2) + (age % 5).ToString();
-           // PASSWORD.Text = password;
+            
         }
 
         string readerResponse(string url)
