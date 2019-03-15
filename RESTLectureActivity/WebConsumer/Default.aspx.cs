@@ -11,6 +11,7 @@ namespace WebConsumer
         {
             LOGINID.ReadOnly = true;
             PASSWORD.ReadOnly = true;
+            programOutput.Visible = false;
         }
 
         protected void SUBMIT_Click(object sender, EventArgs e)
@@ -36,8 +37,8 @@ namespace WebConsumer
             string urlID = @"http://localhost:54497/Service1.svc/loginID?age=" + age;
             loginID = Int32.Parse(readerResponse(urlID));
             LOGINID.Text = loginID.ToString();
-            
-            
+
+            programOutput.Visible = true;
         }
 
         string readerResponse(string url)

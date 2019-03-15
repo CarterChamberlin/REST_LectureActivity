@@ -13,6 +13,15 @@ namespace WebConsumer {
     public partial class _Default {
         
         /// <summary>
+        /// userInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel userInput;
+        
+        /// <summary>
         /// FIRST control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace WebConsumer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SUBMIT;
+        
+        /// <summary>
+        /// programOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel programOutput;
         
         /// <summary>
         /// LOGINID control.
